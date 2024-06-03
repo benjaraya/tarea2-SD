@@ -1,0 +1,11 @@
+# Crear el tópico pedidos con 3 particiones y un factor de replicación de 2
+kafka-topics.sh --create --bootstrap-server kafka:9092 --topic pedidos --partitions 3 --replication-factor 2
+
+# Crear el tópico pedidos.procesados con 3 particiones y un factor de replicación de 2
+kafka-topics.sh --create --bootstrap-server kafka:9092 --topic pedidos.procesados --partitions 3 --replication-factor 2
+
+# (Opcional) Alterar el tópico pedidos para aumentar el número de particiones a 5
+kafka-topics.sh --alter --bootstrap-server kafka:9092 --partitions 5 --topic pedidos
+
+# (Opcional) Alterar el tópico pedidos.procesados para aumentar el número de particiones a 5
+kafka-topics.sh --alter --bootstrap-server kafka:9092 --partitions 5 --topic pedidos.procesados
